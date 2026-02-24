@@ -1,0 +1,35 @@
+:root {
+    --primary: #1a4a7c; /* Deep Corporate Blue */
+    --accent: #27ae60;  /* Success Green */
+    --text: #333;
+    --light: #f4f7f6;
+}
+
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; color: var(--text); line-height: 1.6; }
+
+header { background: white; padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.logo { font-weight: bold; font-size: 1.5rem; color: var(--primary); }
+.nav-btn { background: var(--primary); color: white; padding: 8px 20px; text-decoration: none; border-radius: 5px; }
+
+.hero { padding: 80px 10%; background: var(--light); text-align: center; }
+.hero h1 { font-size: 3rem; color: var(--primary); }
+.hero h1 span { color: var(--accent); }
+.hero-btns { margin-top: 30px; }
+
+.btn-primary { background: var(--accent); color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-right: 15px; }
+.btn-secondary { border: 2px solid var(--primary); color: var(--primary); padding: 13px 30px; text-decoration: none; border-radius: 5px; }
+
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 50px 10%; background: white; }
+.feature-card { padding: 30px; border: 1px solid #eee; border-radius: 10px; text-align: center; transition: 0.3s; }
+.feature-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+.video-section { padding: 50px 10%; background: var(--light); text-align: center; }
+.video-container { max-width: 800px; margin: auto; }
+
+.brochure { padding: 50px 10%; text-align: center; }
+.brochure img { max-width: 100%; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+
+.cta { padding: 80px 10%; background: var(--primary); color: white; text-align: center; }
+.btn-large { background: white; color: var(--primary); padding: 20px 40px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; font-size: 1.2rem; margin-top: 20px; }
+
+footer { padding: 20px; text-align: center; font-size: 0.9rem; background: #eee; }

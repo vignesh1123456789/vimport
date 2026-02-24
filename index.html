@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="V-Import: Bank to Tally Automation. Includes PDF & Excel Import. Free HSN Tool.">
+    <title>V-Import | Bank & Sales Automation</title>
+    
+    <style>
+        /* --- REFINED PROFESSIONAL THEME --- */
+        :root {
+            --primary: #1a4a7c; /* Deep Corporate Blue */
+            --accent: #27ae60;  /* Success Green */
+            --gold: #f39c12;    /* Bonus/Gift Color */
+            --text: #333;
+            --light: #f4f7f6;
+            --white: #ffffff;
+        }
+
+        /* --- BASE STYLES --- */
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; color: var(--text); line-height: 1.6; background-color: var(--light); }
+        h1, h2, h3 { color: var(--primary); margin-top: 0; }
+        a { text-decoration: none; }
+
+        /* --- NAVIGATION --- */
+        header { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo-container { display: flex; align-items: center; gap: 10px; }
+        .logo-text { font-size: 1.5rem; font-weight: 800; color: var(--primary); letter-spacing: -1px; }
+        .nav-btn { background: var(--accent); color: white; padding: 10px 25px; border-radius: 50px; font-weight: bold; transition: 0.3s; }
+        .nav-btn:hover { background: #219150; box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4); }
+
+        /* --- HERO SECTION --- */
+        .hero { padding: 80px 5%; text-align: center; background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; line-height: 1.2; }
+        .hero h1 span { color: var(--accent); border-bottom: 4px solid var(--gold); }
+        .hero p { font-size: 1.2rem; color: #555; margin-bottom: 30px; }
+        .btn-large { background: var(--primary); color: white; padding: 18px 40px; border-radius: 5px; font-weight: bold; font-size: 1.1rem; display: inline-block; transition: 0.3s; }
+        .btn-large:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(26, 74, 124, 0.3); }
+
+        /* --- DUAL VIDEO GRID --- */
+        .video-section { padding: 60px 5%; background: var(--white); text-align: center; }
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 40px; margin-top: 40px; }
+        .video-card { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); border: 1px solid #eee; }
+        .video-card h3 { margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 5px; overflow: hidden; background: #000; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        /* --- BROCHURE & DETAILS --- */
+        .details-section { padding: 80px 10%; background: var(--light); display: flex; flex-wrap: wrap; align-items: center; gap: 50px; }
+        .brochure-img { flex: 1; min-width: 300px; max-width: 500px; }
+        .brochure-img img { width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 5px solid white; }
+        .details-text { flex: 1; min-width: 300px; }
+        .details-text ul { list-style: none; padding: 0; }
+        .details-text li { margin-bottom: 20px; font-size: 1.1rem; display: flex; align-items: start; gap: 15px; }
+        .icon-box { background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; }
+
+        /* --- HSN BONUS SECTION WITH VIDEO --- */
+        .bonus-section { background: linear-gradient(45deg, #1a4a7c, #2c3e50); color: white; padding: 60px 10%; text-align: center; margin: 40px 5%; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); position: relative; overflow: hidden; }
+        .bonus-badge { background: var(--gold); color: #333; display: inline-block; padding: 5px 20px; border-radius: 20px; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 15px; }
+        .bonus-content h2 { color: white; font-size: 2.2rem; }
+        
+        /* --- FAQ SECTION --- */
+        .faq-section { padding: 60px 15%; background: #fff; }
+        .faq-item { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        .faq-question { font-weight: bold; font-size: 1.1rem; color: var(--primary); cursor: pointer; display: flex; justify-content: space-between; }
+        .faq-answer { margin-top: 10px; color: #555; display: block; }
+
+        /* --- PRICING --- */
+        .pricing { padding: 80px 5%; text-align: center; background: var(--light); }
+        .pricing-container { display: flex; justify-content: center; gap: 30px; margin-top: 40px; flex-wrap: wrap; }
+        .price-card { padding: 40px; border-radius: 20px; width: 320px; background: white; border: 1px solid #ddd; position: relative; }
+        .price-card.featured { border: 3px solid var(--accent); transform: scale(1.05); box-shadow: 0 20px 40px rgba(39, 174, 96, 0.2); }
+        .cost { font-size: 3rem; font-weight: 800; color: var(--primary); margin: 20px 0; }
+        .cost span { font-size: 1rem; color: #777; font-weight: normal; }
+
+        /* --- FEEDBACK & CONTACT --- */
+        .feedback { background: #fff; padding: 60px 5%; text-align: center; border-top: 1px solid #eee; }
+        .whatsapp-btn { background: #25D366; color: white; padding: 15px 30px; border-radius: 50px; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; margin-top: 20px; transition: 0.3s; }
+        .whatsapp-btn:hover { background: #1ebc57; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        footer { padding: 30px; text-align: center; font-size: 0.9rem; background: #111; color: #888; }
+
+        /* --- MOBILE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .details-section { flex-direction: column-reverse; text-align: center; }
+            .video-grid { grid-template-columns: 1fr; }
+            .faq-section { padding: 60px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="V-Import" style="height: 40px; width: auto;">
+            <div class="logo-text">V-IMPORT</div>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1ORtWNJG_QSbdEtEeCsv0MJ_sglwzDEVt" class="nav-btn">Download V-Import</a>
+    </header>
+
+    <section class="hero">
+        <h1>Stop Manual Typing. <br><span>Convert PDF to Tally in Seconds.</span></h1>
+        <p>Compatible with ALL Windows Versions. 100% Offline & Secure.</p>
+        <a href="https://drive.google.com/uc?export=download&id=1ORtWNJG_QSbdEtEeCsv0MJ_sglwzDEVt" class="btn-large">Download 7-Day Free Trial</a>
+        <p style="margin-top: 15px; font-size: 0.9rem; color: #777;">*Includes Bank, Sales & Purchase Import</p>
+    </section>
+
+    <section class="video-section">
+        <h2>See How It Works</h2>
+        <div class="video-grid">
+            <div class="video-card">
+                <h3>🏦 Bank Statement Automation</h3>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/YOUR_BANK_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p style="margin-top:10px; font-size:0.9rem;">Auto-map ledgers with Learning Profile.</p>
+            </div>
+
+            <div class="video-card">
+                <h3>📊 Purchase & Sales Import</h3>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/YOUR_SALES_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p style="margin-top:10px; font-size:0.9rem;">Import thousands of invoices instantly.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="details-section">
+        <div class="brochure-img">
+            <img src="brochure.jpg" alt="V-Import Brochure">
+        </div>
+        <div class="details-text">
+            <h2>Why Accountants Choose V-Import?</h2>
+            <p style="margin-bottom: 30px; color: #666;">As seen in our brochure, we solve the biggest problems in manual accounting:</p>
+            <ul>
+                <li>
+                    <div class="icon-box">1</div>
+                    <div>
+                        <strong>Smart Learning Profile</strong>
+                        <p style="margin:5px 0 0; font-size:0.95rem;">Map a transaction once, and the software remembers it forever.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon-box">2</div>
+                    <div>
+                        <strong>100% Private & Offline</strong>
+                        <p style="margin:5px 0 0; font-size:0.95rem;">Client data processes locally on your PC. No cloud uploads.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon-box">3</div>
+                    <div>
+                        <strong>Direct Tally Integration</strong>
+                        <p style="margin:5px 0 0; font-size:0.95rem;">Connects via Port 9000. No messy XML files.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="bonus-section">
+        <div class="bonus-badge">Exclusive Bonus Gift</div>
+        <div class="bonus-content" style="max-width: 800px; margin: 0 auto;">
+            <h2>Free HSN Compliance Tool</h2>
+            <p>Every license includes our HSN Error Fixer Tool (worth ₹500) for FREE. Identify and fix mismatched HSN codes in Excel before import.</p>
+            
+            <div class="video-wrapper" style="margin: 30px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 3px solid var(--gold); border-radius: 10px;">
+                <iframe src="https://www.youtube.com/embed/YOUR_HSN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <a href="https://wa.me/919487251880?text=Hi,%20I%20downloaded%20V-Import.%20How%20do%20I%20get%20the%20Free%20HSN%20Tool?" class="btn-large" style="background: var(--gold); color: #333;">Claim Your Free Tool</a>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h2 style="text-align: center; margin-bottom: 40px;">Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">What if my PDF statement is scanned or not reading?</div>
+            <div class="faq-answer">
+                V-Import is designed for original digital PDFs from the bank. If you have a scanned image or a format that isn't supported, <strong>don't worry!</strong> Simply copy-paste your data into our <strong>Universal Excel Template</strong>, and V-Import will still automate the Tally entry for you.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Do I need internet to use it?</div>
+            <div class="faq-answer">
+                No! V-Import is 100% Offline. Your client data never leaves your computer. Internet is only required for the initial license activation.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Does it work with all Tally versions?</div>
+            <div class="faq-answer">
+                It is optimized for Tally Prime (Direct Integration). For older Tally ERP 9 versions, the software can generate XML files that you can import manually.
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <h2>Simple Pricing. Massive Value.</h2>
+        <div class="pricing-container">
+            <div class="price-card" style="opacity: 0.6; background: #f9f9f9;">
+                <h3>Standard Market Rate</h3>
+                <div class="cost">₹5,000<span>/year</span></div>
+                <ul style="text-align:left; padding-left:20px;">
+                    <li>Generic PDF Tools</li>
+                    <li>No Learning Profile</li>
+                    <li>Cloud-based (Privacy Risk)</li>
+                </ul>
+            </div>
+
+            <div class="price-card featured">
+                <div style="background:var(--accent); color:white; padding:5px; border-radius:10px 10px 0 0; font-weight:bold; margin:-43px -3px 20px;">LAUNCH OFFER</div>
+                <h3>V-Import Pro</h3>
+                <div class="cost">₹1,000<span>/year</span></div>
+                <ul style="text-align:left; padding-left:20px; list-style:none;">
+                    <li style="margin-bottom:10px;">✅ <strong>Unlimited</strong> Companies</li>
+                    <li style="margin-bottom:10px;">✅ <strong>Learning Profile</strong> AI</li>
+                    <li style="margin-bottom:10px;">✅ <strong>100% Offline</strong> Privacy</li>
+                    <li style="margin-bottom:10px;">✅ <strong>Free</strong> HSN Tool</li>
+                </ul>
+                <a href="https://drive.google.com/uc?export=download&id=1ORtWNJG_QSbdEtEeCsv0MJ_sglwzDEVt" class="btn-large" style="width:80%;">Download Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="feedback">
+        <h2>We Build What You Need</h2>
+        <p>Have a feature request or found a bug? We update V-Import based on your feedback.</p>
+        
+        <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top: 20px;">
+            <a href="https://wa.me/919487251880?text=Hi%20Vignesh,%20I%20have%20feedback%20for%20V-Import" class="whatsapp-btn">
+                <span>💬</span> Chat on WhatsApp
+            </a>
+            <a href="mailto:vimport257@gmail.com" class="whatsapp-btn" style="background: #333;">
+                <span>✉️</span> Send Email
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 V-Import Solutions. Developed by Vignesh M in Thiruvananthapuram.</p>
+    </footer>
+
+</body>
+</html>
