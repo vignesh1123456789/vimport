@@ -27,7 +27,7 @@
         header { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         .logo-container { display: flex; align-items: center; gap: 10px; }
         .logo-text { font-size: 1.5rem; font-weight: 800; color: var(--primary); letter-spacing: -1px; }
-        .nav-btn { background: var(--accent); color: white; padding: 10px 25px; border-radius: 50px; font-weight: bold; transition: 0.3s; }
+        .nav-btn { background: var(--accent); color: white; padding: 10px 25px; border-radius: 50px; font-weight: bold; transition: 0.3s; border: none; cursor: pointer; font-size: 1rem; font-family: inherit; }
         .nav-btn:hover { background: #219150; box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4); }
 
         /* --- HERO SECTION --- */
@@ -35,16 +35,26 @@
         .hero h1 { font-size: 3rem; margin-bottom: 20px; line-height: 1.2; }
         .hero h1 span { color: var(--accent); border-bottom: 4px solid var(--gold); }
         .hero p { font-size: 1.2rem; color: #555; margin-bottom: 30px; }
-        .btn-large { background: var(--primary); color: white; padding: 18px 40px; border-radius: 5px; font-weight: bold; font-size: 1.1rem; display: inline-block; transition: 0.3s; }
+        .btn-large { background: var(--primary); color: white; padding: 18px 40px; border-radius: 5px; font-weight: bold; font-size: 1.1rem; display: inline-block; transition: 0.3s; border: none; cursor: pointer; font-family: inherit; }
         .btn-large:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(26, 74, 124, 0.3); }
 
-        /* --- DUAL VIDEO GRID --- */
-        .video-section { padding: 60px 5%; background: var(--white); text-align: center; }
-        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 40px; margin-top: 40px; }
-        .video-card { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); border: 1px solid #eee; }
-        .video-card h3 { margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 10px; }
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 5px; overflow: hidden; background: #000; }
-        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        /* --- CORE FEATURES GRID --- */
+        .features-section { padding: 60px 5%; background: var(--white); text-align: center; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .feature-card { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border: 1px solid #eee; text-align: left; transition: transform 0.3s; }
+        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.12); border-color: var(--accent); }
+        .feature-card h3 { font-size: 1.3rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; color: var(--primary); }
+        .feature-card p { font-size: 0.95rem; color: #555; line-height: 1.5; }
+
+        /* --- SYSTEM REQUIREMENTS --- */
+        .sys-req-section { padding: 60px 5%; background: var(--primary); color: white; text-align: center; }
+        .sys-req-section h2 { color: white; margin-bottom: 40px; }
+        .req-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; text-align: left; }
+        .req-box { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px; flex: 1; min-width: 300px; max-width: 450px; border: 1px solid rgba(255,255,255,0.2); }
+        .req-box h3 { color: var(--gold); border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px; margin-bottom: 20px; }
+        .req-box ul { list-style: none; padding: 0; margin: 0; }
+        .req-box li { margin-bottom: 12px; font-size: 0.95rem; display: flex; gap: 10px; }
+        .req-box li strong { color: #fff; min-width: 90px; }
 
         /* --- BROCHURE & DETAILS --- */
         .details-section { padding: 80px 10%; background: var(--light); display: flex; flex-wrap: wrap; align-items: center; gap: 50px; }
@@ -55,10 +65,10 @@
         .details-text li { margin-bottom: 20px; font-size: 1.1rem; display: flex; align-items: start; gap: 15px; }
         .icon-box { background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; }
 
-        /* --- HSN BONUS SECTION WITH VIDEO --- */
+        /* --- HSN BONUS SECTION --- */
         .bonus-section { background: linear-gradient(45deg, #1a4a7c, #2c3e50); color: white; padding: 60px 10%; text-align: center; margin: 40px 5%; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); position: relative; overflow: hidden; }
         .bonus-badge { background: var(--gold); color: #333; display: inline-block; padding: 5px 20px; border-radius: 20px; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 15px; }
-        .bonus-content h2 { color: white; font-size: 2.2rem; }
+        .bonus-content h2 { color: white; font-size: 2.2rem; margin-bottom: 20px; }
         
         /* --- FAQ SECTION --- */
         .faq-section { padding: 60px 15%; background: #fff; }
@@ -80,12 +90,19 @@
         .whatsapp-btn:hover { background: #1ebc57; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
         footer { padding: 30px; text-align: center; font-size: 0.9rem; background: #111; color: #888; }
 
+        /* --- MODAL (POPUP) STYLES --- */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); }
+        .modal-content { background-color: #f4f7f6; margin: 10% auto; padding: 30px; border: 1px solid #888; width: 90%; max-width: 400px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative; text-align: left; }
+        .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+        .close:hover, .close:focus { color: black; text-decoration: none; }
+
         /* --- MOBILE --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
             .details-section { flex-direction: column-reverse; text-align: center; }
-            .video-grid { grid-template-columns: 1fr; }
+            .feature-grid { grid-template-columns: 1fr; }
             .faq-section { padding: 60px 5%; }
+            .req-container { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -93,36 +110,58 @@
 
     <header>
         <div class="logo-container">
-            <img src="logo.png" alt="V-Import" style="height: 40px; width: auto;">
-            <div class="logo-text">V-IMPORT</div>
-        </div>
-        <a href="https://drive.google.com/file/d/1BI4kmSmdoAv1Q0-pG7DKV_9eAHKxZZQp/view?usp=sharing" class="nav-btn">Download V-Import</a>
+    <img src="logo.jpg" alt="V-Import Logo" style="height: 40px; width: 40px; object-fit: cover; border-radius: 50%;" onerror="this.style.display='none'">
+    <div class="logo-text">V-IMPORT</div>
+</div>
+        <button onclick="openModal()" class="nav-btn">Get V-Import</button>
     </header>
 
     <section class="hero">
-        <h1>Stop Manual Typing. <br><span>Convert PDF to Tally in Seconds.</span></h1>
-        <p>Compatible with Windows10/11. 100% Offline & Secure.</p>
-        <a href="https://drive.google.com/uc?export=download&id=1ORtWNJG_QSbdEtEeCsv0MJ_sglwzDEVt" class="btn-large">Download 7-Day Free Trial</a>
-        <p style="margin-top: 15px; font-size: 0.9rem; color: #777;">*Includes Bank, Sales & Purchase Import</p>
+        <h1>Stop Manual Typing. <br><span>Automate Tally in Seconds.</span></h1>
+        <p>Your complete offline toolkit for Bank Statements, Bulk Invoices, and Master Ledgers.</p>
+        <button onclick="openModal()" class="btn-large">Request 7-Day Free Trial</button>
+        <p style="margin-top: 15px; font-size: 0.9rem; color: #777;">*Works flawlessly on Windows 7, 8, 10, and 11</p>
     </section>
 
-    <section class="video-section">
-        <h2>See How It Works</h2>
-        <div class="video-grid">
-            <div class="video-card">
+    <section class="features-section">
+        <h2>Three Powerful Tools in One Software</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
                 <h3>🏦 Bank Statement Automation</h3>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/YOUR_BANK_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <p style="margin-top:10px; font-size:0.9rem;">Auto-map ledgers with Learning Profile.</p>
+                <p>Convert unlimited pages of bank PDFs into Tally automatically. Features a smart <strong>Learning Profile</strong>—map a recurring transaction once, and the software remembers it forever for future uploads.</p>
             </div>
-
-            <div class="video-card">
+            <div class="feature-card">
                 <h3>📊 Purchase & Sales Import</h3>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/YOUR_SALES_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <p style="margin-top:10px; font-size:0.9rem;">Import thousands of invoices instantly.</p>
+                <p>Upload thousands of B2B or B2C invoices from any Excel or CSV file. Built-in logic perfectly balances entries, auto-calculates GST, and handles Round-Off/Write-Off differences seamlessly.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📁 Bulk Master Updation</h3>
+                <p>Create hundreds of new ledgers in Tally instantly. Automatically update missing GSTINs, addresses, and registration types. Fully compatible with both Tally Prime (Modern) and Tally ERP 9 (Legacy).</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sys-req-section">
+        <h2>System Requirements</h2>
+        <div class="req-container">
+            <div class="req-box">
+                <h3>Minimum Requirements</h3>
+                <ul>
+                    <li><strong>OS:</strong> <span>Windows 7, 8, 10, or 11 (64-bit)</span></li>
+                    <li><strong>Processor:</strong> <span>Intel Core i3 or equivalent</span></li>
+                    <li><strong>RAM:</strong> <span>4 GB</span></li>
+                    <li><strong>Tally:</strong> <span>Tally ERP 9 or Prime (Port 9000)</span></li>
+                    <li><strong>Security:</strong> <span>100% Offline App (No internet needed for daily use)</span></li>
+                </ul>
+            </div>
+            <div class="req-box">
+                <h3>Recommended Specs</h3>
+                <ul>
+                    <li><strong>Processor:</strong> <span>Intel Core i5 or higher</span></li>
+                    <li><strong>RAM:</strong> <span>8 GB for heavy Excel files</span></li>
+                    <li><strong>Storage:</strong> <span>SSD for faster processing</span></li>
+                    <li><strong>Scanned PDFs:</strong> <span>Requires manual Tesseract-OCR installation or pre-processing with a free tool like PDF24.</span></li>
+                </ul>
             </div>
         </div>
     </section>
@@ -133,27 +172,27 @@
         </div>
         <div class="details-text">
             <h2>Why Accountants Choose V-Import?</h2>
-            <p style="margin-bottom: 30px; color: #666;">As seen in our brochure, we solve the biggest problems in manual accounting:</p>
+            <p style="margin-bottom: 30px; color: #666;">We solve the biggest problems in manual accounting, built specifically for Indian Tax Consultants and MSMEs:</p>
             <ul>
                 <li>
                     <div class="icon-box">1</div>
                     <div>
-                        <strong>Smart Learning Profile</strong>
-                        <p style="margin:5px 0 0; font-size:0.95rem;">Map a transaction once, and the software remembers it forever.</p>
+                        <strong>100% Private & Offline</strong>
+                        <p style="margin:5px 0 0; font-size:0.95rem;">Your client's highly sensitive financial data processes entirely on your local PC. Zero cloud uploads mean absolute data security.</p>
                     </div>
                 </li>
                 <li>
                     <div class="icon-box">2</div>
                     <div>
-                        <strong>100% Private & Offline</strong>
-                        <p style="margin:5px 0 0; font-size:0.95rem;">Client data processes locally on your PC. No cloud uploads.</p>
+                        <strong>Direct Tally Integration</strong>
+                        <p style="margin:5px 0 0; font-size:0.95rem;">Connects instantly via Tally Port 9000. Send thousands of entries directly into Tally with zero manual XML handling.</p>
                     </div>
                 </li>
                 <li>
                     <div class="icon-box">3</div>
                     <div>
-                        <strong>Direct Tally Integration</strong>
-                        <p style="margin:5px 0 0; font-size:0.95rem;">Connects via Port 9000. No messy XML files.</p>
+                        <strong>No Third-Party Spyware</strong>
+                        <p style="margin:5px 0 0; font-size:0.95rem;">Avoid unsafe online OCR tools that steal your banking data. We prioritize your privacy above all else.</p>
                     </div>
                 </li>
             </ul>
@@ -164,13 +203,8 @@
         <div class="bonus-badge">Exclusive Bonus Gift</div>
         <div class="bonus-content" style="max-width: 800px; margin: 0 auto;">
             <h2>Free HSN Compliance Tool</h2>
-            <p>Every license includes our HSN Error Fixer Tool (worth ₹500) for FREE. Identify and fix mismatched HSN codes in Excel before import.</p>
-            
-            <div class="video-wrapper" style="margin: 30px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 3px solid var(--gold); border-radius: 10px;">
-                <iframe src="https://www.youtube.com/embed/YOUR_HSN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            <a href="https://wa.me/919487251980?text=Hi,%20I%20downloaded%20V-Import.%20How%20do%20I%20get%20the%20Free%20HSN%20Tool?" class="btn-large" style="background: var(--gold); color: #333;">Claim Your Free Tool</a>
+            <p style="margin-bottom: 30px; font-size: 1.1rem;">Every license includes our built-in HSN Error Fixer Tool (worth ₹500) for FREE. Quickly identify, reconcile, and fix mismatched HSN codes across your bulk data before sending it to Tally.</p>
+            <a href="https://wa.me/919487251980?text=Hi%20Vignesh,%20I%20am%20interested%20in%20V-Import%20and%20the%20Free%20HSN%20Tool!" class="btn-large" style="background: var(--gold); color: #333; text-decoration: none;">Claim Your Free Tool on WhatsApp</a>
         </div>
     </section>
 
@@ -178,23 +212,23 @@
         <h2 style="text-align: center; margin-bottom: 40px;">Frequently Asked Questions</h2>
         
         <div class="faq-item">
-            <div class="faq-question">What if my PDF statement is scanned or not reading?</div>
+            <div class="faq-question">What if my bank PDF is an image or a scanned copy?</div>
             <div class="faq-answer">
-                V-Import is designed for original digital PDFs from the bank. If you have a scanned image or a format that isn't supported, <strong>don't worry!</strong> Simply copy-paste your data into our <strong>Universal Excel Template</strong>, and V-Import will still automate the Tally entry for you.
+                V-Import easily reads native digital PDFs. For highly complex scanned images, simply run the file through a free offline tool like <strong>PDF24</strong> first to make the text readable, or paste the data into our Universal Excel format!
             </div>
         </div>
 
         <div class="faq-item">
             <div class="faq-question">Do I need internet to use it?</div>
             <div class="faq-answer">
-                No! V-Import is 100% Offline. Your client data never leaves your computer. Internet is only required for the initial license activation.
+                No! V-Import is 100% Offline. Your client data never leaves your computer. Internet is only required one time for the initial software license activation.
             </div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">Does it work with all Tally versions?</div>
+            <div class="faq-question">Does it work with older versions of Tally?</div>
             <div class="faq-answer">
-                It is optimized for Tally Prime (Direct Integration). For older Tally ERP 9 versions, the software can generate XML files that you can import manually.
+                Yes. V-Import is optimized for seamless Port 9000 integration with Tally Prime, but it also features a built-in Legacy mode to perfectly support older Tally ERP 9 environments.
             </div>
         </div>
     </section>
@@ -222,17 +256,17 @@
                     <li style="margin-bottom:10px;">✅ <strong>100% Offline</strong> Privacy</li>
                     <li style="margin-bottom:10px;">✅ <strong>Free</strong> HSN Tool</li>
                 </ul>
-                <a href="https://drive.google.com/uc?export=download&id=1ORtWNJG_QSbdEtEeCsv0MJ_sglwzDEVt" class="btn-large" style="width:80%;">Download Now</a>
+                <button onclick="openModal()" class="btn-large" style="width:80%;">Request Free Trial</button>
             </div>
         </div>
     </section>
 
     <section class="feedback">
-        <h2>We Build What You Need</h2>
-        <p>Have a feature request or found a bug? We update V-Import based on your feedback.</p>
+        <h2>Dedicated Developer Support</h2>
+        <p>We provide personalized setups. Get in touch with our lead developer directly to discuss your specific accounting needs.</p>
         
         <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top: 20px;">
-            <a href="https://wa.me/919487251980?text=Hi%20Vignesh,%20I%20have%20feedback%20for%20V-Import" class="whatsapp-btn">
+            <a href="https://wa.me/919487251980?text=Hi%20Vignesh,%20I%20have%20questions%20about%20V-Import" class="whatsapp-btn">
                 <span>💬</span> Chat on WhatsApp
             </a>
             <a href="mailto:vimport257@gmail.com" class="whatsapp-btn" style="background: #333;">
@@ -242,11 +276,64 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 V-Import Solutions. Developed by Vignesh M in Thiruvananthapuram.</p>
+        <p>&copy; 2026 V-Import Solutions. Developed in Thiruvananthapuram.</p>
     </footer>
 
+    <div id="downloadModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 style="color: #1a4a7c; margin-bottom: 10px;">Let's Get You Setup!</h2>
+            <p style="margin-bottom: 20px; color: #555;">Enter your details below. We will reach out to you directly on WhatsApp to arrange your custom trial and answer any questions.</p>
+            
+            <form id="vimportForm" onsubmit="submitToWhatsApp(event)">
+                <input type="text" id="userName" placeholder="Your Name" required style="width: 100%; box-sizing: border-box; padding: 12px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 5px; font-family: inherit;">
+                <input type="email" id="userEmail" placeholder="Your Email Address" required style="width: 100%; box-sizing: border-box; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-family: inherit;">
+                
+                <button type="submit" id="submitBtn" style="width: 100%; background: #25D366; color: white; padding: 15px; border: none; border-radius: 5px; font-weight: bold; font-size: 1.1rem; cursor: pointer; transition: 0.3s; font-family: inherit;">Request Trial via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById("downloadModal").style.display = "block"; }
+        function closeModal() { document.getElementById("downloadModal").style.display = "none"; }
+        
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("downloadModal")) { closeModal(); }
+        }
+
+        // NEW WHATSAPP REDIRECT FUNCTION
+        function submitToWhatsApp(event) {
+            event.preventDefault(); 
+            
+            const btn = document.getElementById("submitBtn");
+            btn.innerText = "Opening WhatsApp...";
+            btn.disabled = true;
+
+            // Grab the user's data
+            const name = document.getElementById("userName").value;
+            const email = document.getElementById("userEmail").value;
+
+            // Format the message nicely for WhatsApp
+            const message = `Hi Vignesh! I am interested in the V-Import 7-Day Free Trial.\n\n*My Details:*\nName: ${name}\nEmail: ${email}\n\nPlease let me know the next steps to get it set up!`;
+            
+            // Encode the message so it works in a URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Your WhatsApp Number
+            const whatsappUrl = `https://wa.me/919487251980?text=${encodedMessage}`;
+
+            // Redirect the user to WhatsApp
+            window.location.href = whatsappUrl;
+            
+            // Reset the form after a short delay
+            setTimeout(() => {
+                closeModal();
+                btn.innerText = "Request Trial via WhatsApp";
+                btn.disabled = false;
+                document.getElementById("vimportForm").reset();
+            }, 2000);
+        }
+    </script>
 </body>
-
 </html>
-
-
