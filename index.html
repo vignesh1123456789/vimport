@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="V-Import: Bank to Tally Automation. Includes PDF & Excel Import. Free HSN Tool.">
-    <title>V-Import | Bank & Sales Automation</title>
+    <meta name="description" content="V-Import: Professional Windows Desktop Software for Tally ERP 9, Prime 2.x/3.0/4.0+ Integration. Import Bank Statements, Sales/Purchase, GSTR-2A Reconciliation, Bulk Master Data & More.">
+    <title>V-Import | Professional Tally Integration Software for Windows</title>
     
     <style>
         /* --- REFINED PROFESSIONAL THEME --- */
         :root {
             --primary: #1a4a7c; /* Deep Corporate Blue */
             --accent: #27ae60;  /* Success Green */
-            --gold: #f39c12;    /* Bonus/Gift Color */
-            --text: #333;
-            --light: #f4f7f6;
+            --gold: #f39c12;    /* Premium Gold */
+            --text: #2d3748;
+            --light: #f7fafc;
             --white: #ffffff;
+            --dark: #1a202c;
         }
 
         /* --- BASE STYLES --- */
@@ -26,49 +27,51 @@
         /* --- NAVIGATION --- */
         header { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         .logo-container { display: flex; align-items: center; gap: 10px; }
-        .logo-text { font-size: 1.5rem; font-weight: 800; color: var(--primary); letter-spacing: -1px; }
-        .nav-btn { background: var(--accent); color: white; padding: 10px 25px; border-radius: 50px; font-weight: bold; transition: 0.3s; border: none; cursor: pointer; font-size: 1rem; font-family: inherit; }
-        .nav-btn:hover { background: #219150; box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4); }
+        .logo-text { font-size: 1.4rem; font-weight: 700; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; }
+        .bonus-badge { background: var(--gold); color: #1a202c; display: inline-block; padding: 8px 25px; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 20px; letter-spacing: 1px; }
+        .bonus-content h2 { color: white; font-size: 2.2rem; margin-bottom: 20px; }
 
         /* --- HERO SECTION --- */
-        .hero { padding: 80px 5%; text-align: center; background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); }
-        .hero h1 { font-size: 3rem; margin-bottom: 20px; line-height: 1.2; }
-        .hero h1 span { color: var(--accent); border-bottom: 4px solid var(--gold); }
-        .hero p { font-size: 1.2rem; color: #555; margin-bottom: 30px; }
-        .btn-large { background: var(--primary); color: white; padding: 18px 40px; border-radius: 5px; font-weight: bold; font-size: 1.1rem; display: inline-block; transition: 0.3s; border: none; cursor: pointer; font-family: inherit; }
-        .btn-large:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(26, 74, 124, 0.3); }
+        .hero { padding: 100px 5%; text-align: center; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f7fafc 100%); position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(26,74,124,0.05) 0%, transparent 70%); border-radius: 50%; }
+        .hero-badge { display: inline-block; background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(26, 74, 124, 0.2); }
+        .hero h1 { font-size: 3.2rem; margin-bottom: 20px; line-height: 1.2; color: var(--dark); font-weight: 800; }
+        .hero h1 span { color: var(--primary); border-bottom: 4px solid var(--accent); }
+        .hero-subtitle { font-size: 1.25rem; color: #4a5568; margin-bottom: 35px; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+        .hero-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .btn-large { background: linear-gradient(135deg, var(--primary), #2c5282); color: white; padding: 18px 40px; border-radius: 8px; font-weight: 700; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s; border: none; cursor: pointer; font-family: inherit; box-shadow: 0 4px 15px rgba(26, 74, 124, 0.3); }
+        .btn-large:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(26, 74, 124, 0.4); }
+        .btn-secondary { background: white; color: var(--primary); padding: 18px 40px; border-radius: 8px; font-weight: 600; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s; border: 2px solid var(--primary); cursor: pointer; font-family: inherit; }
+        .btn-secondary:hover { background: var(--primary); color: white; }
+        .tag { display: inline-block; background: white; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; margin: 0 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; }
 
-        /* --- CORE FEATURES GRID --- */
-        .features-section { padding: 60px 5%; background: var(--white); text-align: center; }
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .feature-card { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border: 1px solid #eee; text-align: left; transition: transform 0.3s; }
-        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.12); border-color: var(--accent); }
-        .feature-card h3 { font-size: 1.3rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; color: var(--primary); }
-        .feature-card p { font-size: 0.95rem; color: #555; line-height: 1.5; }
+        /* --- MODERN FEATURES GRID --- */
+        .features-map-section { padding: 100px 5%; background: white; text-align: center; }
+        .features-map-section h2 { font-size: 2.5rem; margin-bottom: 15px; }
+        .features-map-section > p { color: #4a5568; font-size: 1.15rem; margin-bottom: 60px; }
+        .feature-grid-modern { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .feature-card-modern { background: white; padding: 35px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; text-align: left; transition: all 0.3s ease; }
+        .feature-card-modern:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(26, 74, 124, 0.12); border-color: var(--primary); }
+        .feature-icon-large { font-size: 3rem; margin-bottom: 20px; }
+        .feature-card-modern h3 { font-size: 1.35rem; margin-bottom: 12px; color: var(--dark); font-weight: 700; }
+        .feature-desc { font-size: 1rem; color: #4a5568; margin-bottom: 20px; line-height: 1.6; }
+        .feature-list { list-style: none; padding: 0; margin: 0; }
+        .feature-list li { padding: 8px 0; color: #2d3748; font-size: 0.95rem; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #f0f0f0; }
+        .feature-list li:last-child { border-bottom: none; }
+        .feature-list li::before { content: '✓'; color: var(--accent); font-weight: bold; font-size: 1.1rem; }
 
-        /* --- SYSTEM REQUIREMENTS --- */
-        .sys-req-section { padding: 60px 5%; background: var(--primary); color: white; text-align: center; }
-        .sys-req-section h2 { color: white; margin-bottom: 40px; }
-        .req-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; text-align: left; }
-        .req-box { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px; flex: 1; min-width: 300px; max-width: 450px; border: 1px solid rgba(255,255,255,0.2); }
-        .req-box h3 { color: var(--gold); border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px; margin-bottom: 20px; }
-        .req-box ul { list-style: none; padding: 0; margin: 0; }
-        .req-box li { margin-bottom: 12px; font-size: 0.95rem; display: flex; gap: 10px; }
-        .req-box li strong { color: #fff; min-width: 90px; }
-
-        /* --- BROCHURE & DETAILS --- */
-        .details-section { padding: 80px 10%; background: var(--light); display: flex; flex-wrap: wrap; align-items: center; gap: 50px; }
-        .brochure-img { flex: 1; min-width: 300px; max-width: 500px; }
-        .brochure-img img { width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 5px solid white; }
-        .details-text { flex: 1; min-width: 300px; }
-        .details-text ul { list-style: none; padding: 0; }
-        .details-text li { margin-bottom: 20px; font-size: 1.1rem; display: flex; align-items: start; gap: 15px; }
-        .icon-box { background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; }
+        /* --- TECH SPECS SECTION --- */
+        .tech-specs { padding: 80px 5%; background: linear-gradient(135deg, var(--dark) 0%, #2d3748 100%); color: white; text-align: center; }
+        .tech-specs h2 { color: white; font-size: 2.2rem; margin-bottom: 50px; }
+        .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
+        .spec-card { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s; }
+        .spec-card:hover { background: rgba(255,255,255,0.1); border-color: var(--accent); }
+        .spec-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .spec-card h4 { color: var(--accent); font-size: 1.1rem; margin-bottom: 10px; }
+        .spec-card p { color: #a0aec0; font-size: 0.95rem; line-height: 1.5; }
 
         /* --- HSN BONUS SECTION --- */
-        .bonus-section { background: linear-gradient(45deg, #1a4a7c, #2c3e50); color: white; padding: 60px 10%; text-align: center; margin: 40px 5%; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); position: relative; overflow: hidden; }
-        .bonus-badge { background: var(--gold); color: #333; display: inline-block; padding: 5px 20px; border-radius: 20px; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 15px; }
-        .bonus-content h2 { color: white; font-size: 2.2rem; margin-bottom: 20px; }
+        .bonus-section { background: linear-gradient(135deg, var(--primary), #2c5282); color: white; padding: 60px 10%; text-align: center; margin: 40px 5%; border-radius: 20px; box-shadow: 0 15px 40px rgba(26, 74, 124, 0.3); position: relative; overflow: hidden; }
         
         /* --- FAQ SECTION --- */
         .faq-section { padding: 60px 15%; background: #fff; }
@@ -96,106 +99,246 @@
         .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
         .close:hover, .close:focus { color: black; text-decoration: none; }
 
+        /* --- VIDEO SECTION --- */
+        .video-section { padding: 60px 5%; background: var(--white); text-align: center; }
+        .video-section h2 { color: var(--primary); margin-bottom: 15px; }
+        .video-container { max-width: 800px; margin: 0 auto; position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 50px rgba(0,0,0,0.2); aspect-ratio: 16/9; background: linear-gradient(135deg, var(--primary) 0%, #2c3e50 100%); }
+        .video-container iframe { width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 2; }
+        .video-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; z-index: 1; }
+        .play-icon { font-size: 4rem; margin-bottom: 15px; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+
+        /* --- LOADING SCREEN --- */
+        .loading-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, var(--primary) 0%, #1a3a5c 100%); z-index: 10000; display: flex; align-items: center; justify-content: center; transition: opacity 0.5s ease, visibility 0.5s ease; }
+        .loading-screen.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+        .loading-content { text-align: center; color: white; }
+        .loading-logo { font-size: 5rem; font-weight: 800; animation: logoPulse 1.5s ease-in-out infinite; text-shadow: 0 0 30px rgba(255,255,255,0.3); }
+        @keyframes logoPulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: 0.8; } }
+        .loading-text { font-size: 1.5rem; font-weight: 300; letter-spacing: 8px; margin-top: 10px; opacity: 0.9; }
+        .loading-bar { width: 200px; height: 3px; background: rgba(255,255,255,0.2); border-radius: 3px; margin: 30px auto; overflow: hidden; }
+        .loading-progress { height: 100%; width: 0%; background: linear-gradient(90deg, var(--gold), var(--accent)); border-radius: 3px; transition: width 0.3s ease; }
+        .loading-status { font-size: 0.9rem; opacity: 0.7; font-weight: 300; }
+
+        /* --- INTERACTIVE FEATURES MAP --- */
+        .features-map-section { padding: 80px 5%; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); text-align: center; }
+        .features-map-section h2 { color: var(--primary); margin-bottom: 15px; font-size: 2.2rem; }
+        .features-map-section > p { color: #666; margin-bottom: 50px; font-size: 1.1rem; }
+        .feature-map-container { max-width: 1000px; margin: 0 auto; position: relative; }
+        .feature-hub { width: 140px; height: 140px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; margin: 0 auto; position: relative; z-index: 10; box-shadow: 0 15px 40px rgba(26, 74, 124, 0.3); cursor: pointer; transition: transform 0.3s ease; }
+        .feature-hub:hover { transform: scale(1.05); }
+        .feature-hub-icon { font-size: 2.5rem; margin-bottom: 5px; }
+        .feature-hub-text { font-size: 1rem; font-weight: 700; }
+        .feature-nodes { display: flex; justify-content: center; gap: 30px; margin-top: 50px; flex-wrap: wrap; }
+        .feature-node { background: white; padding: 25px; border-radius: 15px; width: 280px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 2px solid transparent; transition: all 0.3s ease; cursor: pointer; position: relative; }
+        .feature-node:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(39, 174, 96, 0.15); }
+        .feature-node::before { content: ''; position: absolute; top: -30px; left: 50%; transform: translateX(-50%); width: 2px; height: 30px; background: linear-gradient(to bottom, var(--primary), transparent); opacity: 0.3; }
+        .feature-node-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .feature-node h3 { color: var(--primary); font-size: 1.2rem; margin-bottom: 10px; }
+        .feature-node p { color: #666; font-size: 0.95rem; line-height: 1.6; margin: 0; }
+        .feature-node-list { list-style: none; padding: 0; margin: 15px 0 0; text-align: left; }
+        .feature-node-list li { padding: 5px 0; color: #555; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
+        .feature-node-list li::before { content: '✓'; color: var(--accent); font-weight: bold; }
+        .connector-line { position: absolute; top: 140px; left: 50%; transform: translateX(-50%); width: 80%; height: 2px; background: linear-gradient(to right, var(--primary), var(--accent), var(--primary)); opacity: 0.2; z-index: 1; }
+
         /* --- MOBILE --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
             .details-section { flex-direction: column-reverse; text-align: center; }
             .feature-grid { grid-template-columns: 1fr; }
             .faq-section { padding: 60px 5%; }
-            .req-container { flex-direction: column; align-items: center; }
+            .feature-nodes { flex-direction: column; align-items: center; }
+            .feature-node { width: 90%; max-width: 320px; }
+            .connector-line { display: none; }
+            .loading-text { font-size: 1.2rem; letter-spacing: 4px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- LOADING SCREEN -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">V</div>
+            <div class="loading-text">V-IMPORT</div>
+            <div class="loading-bar">
+                <div class="loading-progress" id="loadingProgress"></div>
+            </div>
+            <div class="loading-status" id="loadingStatus">Initializing...</div>
+        </div>
+    </div>
+
     <header>
-        <div class="logo-container">
-    <img src="logo.png" alt="V-Import Logo" style="height: 40px; width: 40px; object-fit: cover; border-radius: 50%;" onerror="this.style.display='none'">
-    <div class="logo-text">V-IMPORT</div>
-</div>
-        <button onclick="openModal()" class="nav-btn">Get V-Import</button>
+        <div class="logo-container" style="cursor: default;">
+            <img src="logo.png" alt="V-Import Logo" style="height: 38px; width: 38px; object-fit: cover; border-radius: 8px;" onerror="this.style.display='none'">
+            <div class="logo-text">V-Import</div>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1>Stop Manual Typing. <br><span>Automate Tally in Seconds.</span></h1>
-        <p>Your complete offline toolkit for Bank Statements, Bulk Invoices, and Master Ledgers.</p>
-        <button onclick="openModal()" class="btn-large">Request 7-Day Free Trial</button>
-        <p style="margin-top: 15px; font-size: 0.9rem; color: #777;">*Works flawlessly on Windows 7, 8, 10, and 11</p>
-    </section>
-
-    <section class="features-section">
-        <h2>Three Powerful Tools in One Software</h2>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <h3>🏦 Bank Statement Automation</h3>
-                <p>Convert unlimited pages of bank PDFs into Tally automatically. Features a smart <strong>Learning Profile</strong>—map a recurring transaction once, and the software remembers it forever for future uploads.</p>
-            </div>
-            <div class="feature-card">
-                <h3>📊 Purchase & Sales Import</h3>
-                <p>Upload thousands of B2B or B2C invoices from any Excel or CSV file. Built-in logic perfectly balances entries, auto-calculates GST, and handles Round-Off/Write-Off differences seamlessly.</p>
-            </div>
-            <div class="feature-card">
-                <h3>📁 Bulk Master Updation</h3>
-                <p>Create hundreds of new ledgers in Tally instantly. Automatically update missing GSTINs, addresses, and registration types. Fully compatible with both Tally Prime (Modern) and Tally ERP 9 (Legacy).</p>
-            </div>
+    <section class="hero" id="heroSection">
+        <div class="hero-badge">💻 Windows Desktop Application</div>
+        <h1>Professional Tally Integration<br><span>Built for Indian Accountants</span></h1>
+        <p class="hero-subtitle">Import Excel, CSV & PDF Bank Statements directly into Tally ERP 9, Prime 2.x, 3.0 & 4.0+. Bulk Master Data Import, Receipts, Payments & Journal Vouchers — All in One Powerful Windows App.</p>
+        <div class="hero-buttons">
+            <button onclick="openModal()" class="btn-large">🚀 Start Free Trial</button>
+            <button onclick="scrollToFeatures()" class="btn-secondary">📋 Explore Features</button>
         </div>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">
+            <span class="tag">🔒 100% Offline</span>
+            <span class="tag">⚡ Port 9000</span>
+            <span class="tag">🪟 Windows 10/11</span>
+        </p>
     </section>
 
-    <section class="sys-req-section">
-        <h2>System Requirements</h2>
-        <div class="req-container">
-            <div class="req-box">
-                <h3>Minimum Requirements</h3>
-                <ul>
-                    <li><strong>OS:</strong> <span>Windows 7, 8, 10, or 11 (64-bit)</span></li>
-                    <li><strong>Processor:</strong> <span>Intel Core i3 or equivalent</span></li>
-                    <li><strong>RAM:</strong> <span>4 GB</span></li>
-                    <li><strong>Tally:</strong> <span>Tally ERP 9 or Prime (Port 9000)</span></li>
-                    <li><strong>Security:</strong> <span>100% Offline App (No internet needed for daily use)</span></li>
+    <section class="features-map-section" id="featuresSection">
+        <h2>Complete Tally Integration Toolkit</h2>
+        <p>Professional-grade automation for every aspect of your accounting workflow</p>
+        
+        <div class="feature-grid-modern">
+            <!-- Bank Import -->
+            <div class="feature-card-modern">
+                <div class="feature-icon-large">🏦</div>
+                <h3>Bank Statement Import</h3>
+                <p class="feature-desc">Import from <strong>Excel & PDF</strong> with intelligent OCR for scanned statements. Auto-detects columns, learns transaction patterns.</p>
+                <ul class="feature-list">
+                    <li>PDF/Excel/CSV support</li>
+                    <li>OCR for scanned PDFs (pdfplumber + pytesseract)</li>
+                    <li>Machine Learning Profile system</li>
+                    <li>Multi-entry voucher support</li>
+                    <li>Round-off vs Write-off handling</li>
+                    <li>Inline transaction editor</li>
                 </ul>
             </div>
-            <div class="req-box">
-                <h3>Recommended Specs</h3>
-                <ul>
-                    <li><strong>Processor:</strong> <span>Intel Core i5 or higher</span></li>
-                    <li><strong>RAM:</strong> <span>8 GB for heavy Excel files</span></li>
-                    <li><strong>Storage:</strong> <span>SSD for faster processing</span></li>
-                    <li><strong>Scanned PDFs:</strong> <span>Requires manual Tesseract-OCR installation or pre-processing with a free tool like PDF24.</span></li>
+
+            <!-- Sales/Purchase -->
+            <div class="feature-card-modern">
+                <div class="feature-icon-large">📊</div>
+                <h3>Sales & Purchase Import</h3>
+                <p class="feature-desc">Bulk invoice import with <strong>automatic GST calculation</strong> for B2B & B2C. Supports multi-tax rate invoices.</p>
+                <ul class="feature-list">
+                    <li>B2B & B2C invoice support</li>
+                    <li>Auto GST computation (CGST/SGST/IGST)</li>
+                    <li>Row-wise/pivot format handling</li>
+                    <li>HSN code management</li>
+                    <li>Multi-format Excel support</li>
+                </ul>
+            </div>
+
+            <!-- Receipt/Payment/Journal -->
+            <div class="feature-card-modern">
+                <div class="feature-icon-large">💰</div>
+                <h3>Receipt, Payment & Journal</h3>
+                <p class="feature-desc">Import all voucher types with <strong>automatic ledger mapping</strong> and opening balance handling.</p>
+                <ul class="feature-list">
+                    <li>Receipt vouchers</li>
+                    <li>Payment vouchers</li>
+                    <li>Journal vouchers</li>
+                    <li>Contra entries</li>
+                    <li>Opening balance import</li>
+                    <li>Mailing & shipping addresses</li>
+                    <li>Opening balances (Dr/Cr)</li>
+                    <li>Aliases & contact details</li>
+                </ul>
+            </div>
+
+            <!-- Party Mapping -->
+            <div class="feature-card-modern">
+                <div class="feature-icon-large">🔄</div>
+                <h3>Party Name Mapping</h3>
+                <p class="feature-desc">Map Excel names to existing Tally ledgers. <strong>Download & re-upload</strong> mapping tables.</p>
+                <ul class="feature-list">
+                    <li>Excel → Tally ledger mapping</li>
+                    <li>Prevents duplicate creation</li>
+                    <li>Download mapping as Excel</li>
+                    <li>Re-upload updated mappings</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section class="details-section">
-        <div class="brochure-img">
-            <img src="brochure.jpg" alt="V-Import Brochure">
+    <section class="video-section">
+        <h2>See V-Import in Action</h2>
+        <p style="color: #666; margin-bottom: 30px;">Watch how V-Import transforms your accounting workflow</p>
+        <div class="video-container">
+            <!-- ADD YOUR YOUTUBE VIDEO LINK HERE - Replace the placeholder below -->
+            <iframe id="youtubeVideo" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video-placeholder" id="videoPlaceholder">
+                <div class="play-icon">▶</div>
+                <p>Video coming soon!<br><small>Add your YouTube link in the HTML</small></p>
+            </div>
         </div>
-        <div class="details-text">
-            <h2>Why Accountants Choose V-Import?</h2>
-            <p style="margin-bottom: 30px; color: #666;">We solve the biggest problems in manual accounting, built specifically for Indian Tax Consultants and MSMEs:</p>
-            <ul>
-                <li>
-                    <div class="icon-box">1</div>
+    </section>
+
+    <!-- WHY CHOOSE V-IMPORT -->
+    <section class="tech-specs">
+        <h2>✓ Why Accountants Trust V-Import</h2>
+        <div class="specs-grid">
+            <div class="spec-card">
+                <div class="spec-icon">🔒</div>
+                <h4>100% Data Privacy</h4>
+                <p>Your financial data never leaves your computer. No cloud uploads, no third-party servers.</p>
+            </div>
+            <div class="spec-card">
+                <div class="spec-icon">⚡</div>
+                <h4>Instant Tally Sync</h4>
+                <p>Direct connection to Tally ERP 9, Prime 2.x, 3.0 & 4.0+. Send thousands of entries in seconds.</p>
+            </div>
+            <div class="spec-card">
+                <div class="spec-icon">🛡️</div>
+                <h4>Secure License Protection</h4>
+                <p>Each license is tied to your hardware for maximum security and protection.</p>
+            </div>
+            <div class="spec-card">
+                <div class="spec-icon">📄</div>
+                <h4>Smart OCR Technology</h4>
+                <p>Advanced text recognition extracts data from both digital and scanned PDF bank statements.</p>
+            </div>
+            <div class="spec-card">
+                <div class="spec-icon">💼</div>
+                <h4>Built for Professionals</h4>
+                <p>Clean, intuitive interface designed specifically for Indian accountants and tax consultants.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="details-section" style="background: linear-gradient(135deg, #f7fafc, #edf2f7);">
+        <div class="details-text" style="flex: 1; min-width: 300px; max-width: 600px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 2.2rem; margin-bottom: 20px;">How V-Import Works</h2>
+            <p style="color: #4a5568; font-size: 1.1rem; margin-bottom: 40px;">End-to-end workflow from file upload to Tally import</p>
+            
+            <div style="display: grid; gap: 25px;">
+                <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); text-align: left; display: flex; gap: 20px; align-items: flex-start;">
+                    <div style="background: var(--primary); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; flex-shrink: 0;">1</div>
                     <div>
-                        <strong>100% Private & Offline</strong>
-                        <p style="margin:5px 0 0; font-size:0.95rem;">Your client's highly sensitive financial data processes entirely on your local PC. Zero cloud uploads mean absolute data security.</p>
+                        <h4 style="margin: 0 0 8px; color: var(--dark);">Upload Your Files</h4>
+                        <p style="margin: 0; color: #666; font-size: 0.95rem;">Import Excel, CSV, or PDF files. Drag & drop support with instant preview.</p>
                     </div>
-                </li>
-                <li>
-                    <div class="icon-box">2</div>
+                </div>
+                
+                <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); text-align: left; display: flex; gap: 20px; align-items: flex-start;">
+                    <div style="background: var(--primary); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; flex-shrink: 0;">2</div>
                     <div>
-                        <strong>Direct Tally Integration</strong>
-                        <p style="margin:5px 0 0; font-size:0.95rem;">Connects instantly via Tally Port 9000. Send thousands of entries directly into Tally with zero manual XML handling.</p>
+                        <h4 style="margin: 0 0 8px; color: var(--dark);">Smart Column Mapping</h4>
+                        <p style="margin: 0; color: #666; font-size: 0.95rem;">Auto-detects columns from headers. Map fields visually with live autocomplete from Tally.</p>
                     </div>
-                </li>
-                <li>
-                    <div class="icon-box">3</div>
+                </div>
+                
+                <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); text-align: left; display: flex; gap: 20px; align-items: flex-start;">
+                    <div style="background: var(--primary); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; flex-shrink: 0;">3</div>
                     <div>
-                        <strong>No Third-Party Spyware</strong>
-                        <p style="margin:5px 0 0; font-size:0.95rem;">Avoid unsafe online OCR tools that steal your banking data. We prioritize your privacy above all else.</p>
+                        <h4 style="margin: 0 0 8px; color: var(--dark);">Preview & Edit</h4>
+                        <p style="margin: 0; color: #666; font-size: 0.95rem;">Review data in rich inline editor. Edit transactions, assign ledgers, fix discrepancies.</p>
                     </div>
-                </li>
-            </ul>
+                </div>
+                
+                <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); text-align: left; display: flex; gap: 20px; align-items: flex-start;">
+                    <div style="background: var(--accent); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; flex-shrink: 0;">4</div>
+                    <div>
+                        <h4 style="margin: 0 0 8px; color: var(--dark);">Send to Tally</h4>
+                        <p style="margin: 0; color: #666; font-size: 0.95rem;">One-click export to Tally via Port 9000. Supports both Legacy and Modern XML formats.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -334,6 +477,62 @@
                 document.getElementById("vimportForm").reset();
             }, 2000);
         }
+
+        // LOADING SCREEN ANIMATION
+        const loadingScreen = document.getElementById('loadingScreen');
+        const loadingProgress = document.getElementById('loadingProgress');
+        const loadingStatus = document.getElementById('loadingStatus');
+        
+        const loadingSteps = [
+            { progress: 20, status: 'Loading modules...' },
+            { progress: 40, status: 'Connecting to Tally...' },
+            { progress: 60, status: 'Preparing automation tools...' },
+            { progress: 80, status: 'Optimizing workflow...' },
+            { progress: 100, status: 'Ready!' }
+        ];
+        
+        let stepIndex = 0;
+        
+        function updateLoading() {
+            if (stepIndex < loadingSteps.length) {
+                loadingProgress.style.width = loadingSteps[stepIndex].progress + '%';
+                loadingStatus.textContent = loadingSteps[stepIndex].status;
+                stepIndex++;
+                setTimeout(updateLoading, 400);
+            } else {
+                setTimeout(() => {
+                    loadingScreen.classList.add('hidden');
+                }, 500);
+            }
+        }
+        
+        // Start loading on page load
+        window.addEventListener('load', () => {
+            setTimeout(updateLoading, 300);
+        });
+        
+        // SCROLL TO FEATURES
+        function scrollToFeatures() {
+            document.getElementById('featuresSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // FEATURE DETAIL POPUP
+        function showFeatureDetail(feature) {
+            const details = {
+                bank: 'Bank Statement Import: Automatically extracts transactions from any bank PDF. The Learning Profile remembers your mappings for future imports.',
+                sales: 'Sales & Purchase Import: Upload thousands of invoices at once. Auto-calculates GST, handles round-offs, and balances entries perfectly.',
+                master: 'Master Data Management: Create hundreds of ledgers in one click. Updates GSTINs, addresses, and syncs with Tally instantly.'
+            };
+            alert(details[feature]);
+        }
+        
+        function scrollToDemo() {
+            document.querySelector('.video-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // TO ACTIVATE YOUTUBE VIDEO - Uncomment and replace YOUR_VIDEO_ID
+        // document.getElementById('youtubeVideo').src = 'https://www.youtube.com/embed/YOUR_VIDEO_ID';
+        // document.getElementById('videoPlaceholder').style.display = 'none';
     </script>
 </body>
 </html>
